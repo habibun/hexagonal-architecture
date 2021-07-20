@@ -8,10 +8,7 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class DoctrineVoteRepository implements VoteRepositoryInterface
 {
-    /**
-     * @var EntityManagerInterface
-     */
-    private $entityManager;
+    private EntityManagerInterface $entityManager;
 
     public function __construct(EntityManagerInterface $entityManager)
     {

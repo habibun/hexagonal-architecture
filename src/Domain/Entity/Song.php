@@ -31,10 +31,6 @@ class Song
      */
     private $songDetails;
 
-    /**
-     * @param int $songId
-     * @param string $songDetails
-     */
     public function __construct(int $songId, string $songDetails)
     {
         $this->songId = $songId;
@@ -66,8 +62,8 @@ class Song
         } else {
             //calculate average:
             $currentCount = $this->votesCount;
-            $this->score = ($this->score * $currentCount + $score) / ($currentCount +1);
+            $this->score = ($this->score * $currentCount + $score) / ($currentCount + 1);
         }
-        $this->votesCount++;
+        ++$this->votesCount;
     }
 }

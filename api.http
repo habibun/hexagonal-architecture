@@ -1,0 +1,16 @@
+GET http://localhost:8000/songs/list
+Accept: application/json
+
+###
+POST http://localhost:8000/vote/1/1
+Content-Type: application/json
+
+{
+  "id": 2
+}
+
+###
+GET http://localhost:8000/votes/list
+Accept: application/json
+
+###

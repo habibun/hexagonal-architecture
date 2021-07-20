@@ -9,20 +9,10 @@ use App\Domain\Repository\VoteRepositoryInterface;
 
 class VotingService
 {
-    /**
-     * @var SongRepositoryInterface
-     */
-    private $songRepository;
+    private SongRepositoryInterface $songRepository;
 
-    /**
-     * @var VoteRepositoryInterface
-     */
-    private $voteRepository;
+    private VoteRepositoryInterface $voteRepository;
 
-    /**
-     * @param SongRepositoryInterface $songRepository
-     * @param VoteRepositoryInterface $voteRepository
-     */
     public function __construct(SongRepositoryInterface $songRepository, VoteRepositoryInterface $voteRepository)
     {
         $this->songRepository = $songRepository;
@@ -30,14 +20,10 @@ class VotingService
     }
 
     /**
-     * @param int $id
-     * @param int $score
-     *
      * @return string
      */
     public function vote(int $id, int $score)
     {
-
         $song = $this->voteRepository->findSong($id);
         if (!$song) {
             $song = $this->songRepository->findSong($id);
@@ -48,10 +34,10 @@ class VotingService
         $song->vote($score);
         $this->voteRepository->saveVote($song);
 
-        return "success";
+        return 'success';
     }
 
-    public function getVotes()
+    public function getVotes(): array
     {
         return array_map(function (Song $song) {
             return [
