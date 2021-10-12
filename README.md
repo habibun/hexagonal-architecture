@@ -10,4 +10,13 @@ Source: https://minompi.medium.com/symfony-and-hexagonal-architecture-b3c4704e94
 
 ---
 
+Source: https://www.elao.com/blog/dev/architecture-hexagonale-symfony
+
+---
+
+
+Source: https://apiumhub.com/tech-blog-barcelona/applying-hexagonal-architecture-symfony-project/
+
+---
+
 
