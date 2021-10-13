@@ -21,4 +21,9 @@ Source: https://apiumhub.com/tech-blog-barcelona/applying-hexagonal-architecture
 
 ---
 
+Branch: [mdxpl](https://github.com/habibun/symfony-hexagonal/tree/mdxpl)  
+Source: [mdxpl/hexagonal-architecture-symfony](https://github.com/mdxpl/hexagonal-architecture-symfony)
+
+---
+
 
