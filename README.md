@@ -8,6 +8,8 @@ Source: [Ports and Adapters implementation in PHP, with a little help from Symfo
 ---
 Source: https://minompi.medium.com/symfony-and-hexagonal-architecture-b3c4704e94de
 
+or https://dev.to/minompi/symfony-and-hexagonal-architecture-5c91
+
 ---
 
 Source: https://www.elao.com/blog/dev/architecture-hexagonale-symfony
