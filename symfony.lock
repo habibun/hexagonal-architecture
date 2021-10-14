@@ -115,8 +115,17 @@
             "config/packages/sensio_framework_extra.yaml"
         ]
     },
+    "simple-bus/message-bus": {
+        "version": "v6.2.0"
+    },
+    "simple-bus/symfony-bridge": {
+        "version": "v6.2.0"
+    },
     "swiftmailer/swiftmailer": {
         "version": "v6.2.7"
+    },
+    "symfony/asset": {
+        "version": "v4.4.27"
     },
     "symfony/cache": {
         "version": "v4.4.31"
@@ -182,6 +191,9 @@
             ".env"
         ]
     },
+    "symfony/form": {
+        "version": "v4.4.31"
+    },
     "symfony/framework-bundle": {
         "version": "4.4",
         "recipe": {
@@ -212,6 +224,12 @@
     "symfony/http-kernel": {
         "version": "v4.4.32"
     },
+    "symfony/inflector": {
+        "version": "v4.4.27"
+    },
+    "symfony/intl": {
+        "version": "v4.4.31"
+    },
     "symfony/mime": {
         "version": "v4.4.31"
     },
@@ -233,7 +251,13 @@
             "config/packages/dev/monolog.yaml"
         ]
     },
+    "symfony/options-resolver": {
+        "version": "v4.4.30"
+    },
     "symfony/polyfill-apcu": {
+        "version": "v1.23.0"
+    },
+    "symfony/polyfill-intl-icu": {
         "version": "v1.23.0"
     },
     "symfony/polyfill-intl-idn": {
@@ -256,6 +280,9 @@
     },
     "symfony/polyfill-php81": {
         "version": "v1.23.0"
+    },
+    "symfony/property-access": {
+        "version": "v4.4.30"
     },
     "symfony/proxy-manager-bridge": {
         "version": "v4.4.27"
@@ -293,6 +320,9 @@
             "config/packages/swiftmailer.yaml",
             "config/packages/dev/swiftmailer.yaml"
         ]
+    },
+    "symfony/templating": {
+        "version": "v4.4.30"
     },
     "symfony/translation-contracts": {
         "version": "v2.4.0"
