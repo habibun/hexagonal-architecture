@@ -48,7 +48,7 @@ class CreateArticleAction implements Action
             }
         }
 
-        return $this->templating->renderResponse('Article/CreateArticleAction.html.twig', [
+        return $this->templating->renderResponse('article/create_article_action.html.twig', [
             'form' => $form->createView(),
         ]);
     }

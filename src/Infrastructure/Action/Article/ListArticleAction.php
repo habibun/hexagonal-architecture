@@ -21,7 +21,7 @@ class ListArticleAction implements Action
 
     public function __invoke(Request $request): Response
     {
-        return $this->templating->renderResponse('Article/ListArticleAction.html.twig', [
+        return $this->templating->renderResponse('article/list_article_action.html.twig', [
             'articles' => $this->query->execute(),
         ]);
     }
