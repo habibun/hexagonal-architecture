@@ -4,11 +4,10 @@ namespace Domain\Model\Article;
 
 class Article
 {
-
-    private $id;
-    private $isPublished;
-    private $title;
-    private $content;
+    private string $id;
+    private bool $isPublished;
+    private string $title;
+    private string $content;
 
     public function __construct(string $id, bool $isPublished, string $title, string $content)
     {
@@ -23,7 +22,7 @@ class Article
         return $this->id;
     }
 
-    public function isPublished(): boolean
+    public function isPublished(): bool
     {
         return $this->isPublished;
     }
@@ -47,5 +46,4 @@ class Article
             $data['content']
         );
     }
-
 }

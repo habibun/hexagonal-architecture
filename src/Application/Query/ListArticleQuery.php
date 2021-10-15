@@ -10,17 +10,15 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class ListArticleQuery implements Query
 {
+    public const LISTED = 'article.listed';
 
-    const LISTED = 'article.listed';
-
-    private $articleRepository;
-    private $eventDispatcher;
+    private ArticleRepositoryInterface $articleRepository;
+    private EventDispatcherInterface $eventDispatcher;
 
     public function __construct(
         ArticleRepositoryInterface $articleRepository,
         EventDispatcherInterface $eventDispatcher
-    )
-    {
+    ) {
         $this->articleRepository = $articleRepository;
         $this->eventDispatcher = $eventDispatcher;
     }
@@ -33,12 +31,11 @@ class ListArticleQuery implements Query
         $list = $this->articleRepository->getList();
         foreach ($list as $article) {
             $this->eventDispatcher->dispatch(
+                new ArticleEvent($article),
                 self::LISTED,
-                new ArticleEvent($article)
             );
         }
 
         return $list;
     }
-
 }

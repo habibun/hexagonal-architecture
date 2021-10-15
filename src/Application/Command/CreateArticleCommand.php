@@ -4,9 +4,8 @@ namespace Application\Command;
 
 class CreateArticleCommand
 {
-
-    private $title;
-    private $content;
+    private string $title;
+    private string $content;
 
     public function __construct($title, $content)
     {
@@ -14,14 +13,13 @@ class CreateArticleCommand
         $this->content = $content;
     }
 
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
 
-    public function getContent()
+    public function getContent(): string
     {
         return $this->content;
     }
-
 }

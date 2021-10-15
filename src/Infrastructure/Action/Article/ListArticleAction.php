@@ -10,8 +10,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ListArticleAction implements Action
 {
-    private $templating;
-    private $query;
+    private EngineInterface $templating;
+    private ListArticleQuery $query;
 
     public function __construct(EngineInterface $templating, ListArticleQuery $query)
     {

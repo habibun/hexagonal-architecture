@@ -3,18 +3,17 @@
 namespace Application\CommandHandler;
 
 use Application\Command\CreateArticleCommand;
+use Domain\Model\Article\Article;
 use Domain\Model\Article\ArticleEvent;
 use Domain\Model\Article\ArticleRepositoryInterface;
-use Domain\Model\Article\Article;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class CreateArticleCommandHandler
 {
+    public const CREATED = 'article.created';
 
-    const CREATED = 'article.created';
-
-    private $articleRepository;
-    private $eventDispatcher;
+    private ArticleRepositoryInterface $articleRepository;
+    private EventDispatcherInterface $eventDispatcher;
 
     public function __construct(ArticleRepositoryInterface $articleRepository, EventDispatcherInterface $eventDispatcher)
     {
@@ -24,7 +23,6 @@ class CreateArticleCommandHandler
 
     public function handle(CreateArticleCommand $command): void
     {
-
         $article = new Article(
             uniqid(),
             false,
@@ -33,8 +31,6 @@ class CreateArticleCommandHandler
         );
 
         $this->articleRepository->create($article);
-        $this->eventDispatcher->dispatch(self::CREATED, new ArticleEvent($article));
-
+        $this->eventDispatcher->dispatch(new ArticleEvent($article), self::CREATED);
     }
-
 }

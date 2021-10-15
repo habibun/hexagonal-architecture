@@ -2,15 +2,20 @@
 
 namespace Infrastructure\Repository\Doctrine;
 
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Query;
+use Doctrine\Persistence\ManagerRegistry;
 use Domain\Model\Article\ArticleException;
 use Domain\Model\Article\ArticleRepositoryInterface;
 use Domain\Model\Article\Article;
-use Doctrine\ORM\EntityRepository;
 
-class ArticleRepository extends EntityRepository implements ArticleRepositoryInterface
+class ArticleRepository extends ServiceEntityRepository implements ArticleRepositoryInterface
 {
+    public function __construct(ManagerRegistry $registry)
+    {
+        parent::__construct($registry, Article::class);
+    }
 
     public function getById(int $id): Article
     {

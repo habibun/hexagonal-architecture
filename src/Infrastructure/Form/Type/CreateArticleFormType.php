@@ -14,7 +14,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class CreateArticleFormType extends AbstractType implements DataMapperInterface
 {
-
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
@@ -32,7 +31,7 @@ class CreateArticleFormType extends AbstractType implements DataMapperInterface
     }
 
     /**
-     * @param CreateArticleCommand $data
+     * @param CreateArticleCommand         $data
      * @param FormInterface[]|\Traversable $forms
      */
     public function mapDataToForms($data, $forms): void
@@ -44,7 +43,7 @@ class CreateArticleFormType extends AbstractType implements DataMapperInterface
 
     /**
      * @param FormInterface[]|\Traversable $forms
-     * @param CreateArticleCommand $data
+     * @param CreateArticleCommand         $data
      */
     public function mapFormsToData($forms, &$data): void
     {
@@ -55,6 +54,4 @@ class CreateArticleFormType extends AbstractType implements DataMapperInterface
             $forms['content']->getData()
         );
     }
-
 }
-

@@ -50,14 +50,15 @@ services:
     # please note that last definitions always *replace* previous ones
 
     # ALIASES
-    Domain\Model\Article\ArticleRepositoryInterface: '@article_repository_inmemory'
+#    Domain\Model\Article\ArticleRepositoryInterface: '@article_repository_inmemory'
+    Domain\Model\Article\ArticleRepositoryInterface: '@Infrastructure\Repository\Doctrine\ArticleRepository'
 
     # FORMS
-    Infrastructure\Form\Type\CreateArticleFormType: ~
+#    Infrastructure\Form\Type\CreateArticleFormType: ~
 
     # ACTIONS
-    Infrastructure\Action\Article\CreateArticleAction: ~
-    Infrastructure\Action\Article\ListArticleAction: ~
+#    Infrastructure\Action\Article\CreateArticleAction: ~
+#    Infrastructure\Action\Article\ListArticleAction: ~
 
     # COMMAND HANDLERS
     Application\CommandHandler\CreateArticleCommandHandler:
@@ -66,16 +67,16 @@ services:
             - { name: command_handler, handles: Application\Command\CreateArticleCommand }
 
     # QUERIES
-    Application\Query\ListArticleQuery: ~
+#    Application\Query\ListArticleQuery: ~
 
     # REPOSITORIES
-    article_repository_doctrine:
-        class: Infrastructure\Repository\Doctrine\ArticleRepository
-        arguments: ['Domain\Model\Article\Article']
-        factory: ['@doctrine.orm.entity_manager', getRepository]
+#    article_repository_doctrine:
+#        class: Infrastructure\Repository\Doctrine\ArticleRepository
+#        arguments: ['Domain\Model\Article\Article']
+#        factory: ['@doctrine.orm.entity_manager', getRepository]
 
-    article_repository_inmemory:
-        class: Infrastructure\Repository\InMemory\ArticleRepository
+#    article_repository_inmemory:
+#        class: Infrastructure\Repository\InMemory\ArticleRepository
 
     # MessageBus
     SimpleBus\Message\Bus\MessageBus: '@simple_bus.command_bus'

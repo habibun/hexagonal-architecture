@@ -3,14 +3,13 @@
 namespace Infrastructure\Repository\InMemory;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Domain\Model\Article\Article;
 use Domain\Model\Article\ArticleException;
 use Domain\Model\Article\ArticleRepositoryInterface;
-use Domain\Model\Article\Article;
 
 class ArticleRepository implements ArticleRepositoryInterface
 {
-
-    public $articles = [];
+    public array $articles = [];
 
     public function __construct()
     {
@@ -26,6 +25,9 @@ class ArticleRepository implements ArticleRepositoryInterface
         $this->articles[$article->getId()] = $article;
     }
 
+    /**
+     * @throws ArticleException
+     */
     public function getById(int $id): Article
     {
         if (!array_key_exists($id, $this->articles)) {
@@ -36,8 +38,6 @@ class ArticleRepository implements ArticleRepositoryInterface
     }
 
     /**
-     * @param int $limit
-     * @param int $offset
      * @return ArrayCollection|Article[]
      */
     public function getList(int $limit = 0, int $offset = 0): ArrayCollection
