@@ -1,3 +1,7 @@
+homepage:
+    path: '/'
+    defaults: { _controller: 'Infrastructure\Action\HomepageAction' }
+
 article_create:
     path: '/article/create'
     defaults: { _controller: 'Infrastructure\Action\Article\CreateArticleAction' }

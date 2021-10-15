@@ -4,8 +4,6 @@ namespace Infrastructure\Action\Article;
 
 use Infrastructure\Action\Action;
 use Infrastructure\Form\Type\CreateArticleFormType;
-use SimpleBus\Message\Bus\MessageBus;
-use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,17 +11,18 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Routing\RouterInterface;
+use Twig\Environment;
 
 class CreateArticleAction implements Action
 {
-    private EngineInterface $templating;
+    private Environment $templating;
     private RouterInterface $router;
     private FormFactoryInterface $formFactory;
     private MessageBusInterface $commandBus;
     private SessionInterface $session;
 
     public function __construct(
-        EngineInterface $templating,
+        Environment $templating,
         RouterInterface $router,
         FormFactoryInterface $formFactory,
         SessionInterface $session,
@@ -49,9 +48,9 @@ class CreateArticleAction implements Action
             }
         }
 
-        return $this->templating->renderResponse('article/create_article_action.html.twig', [
+        return new Response($this->templating->render('article/create_article_action.html.twig', [
             'form' => $form->createView(),
-        ]);
+        ]));
     }
 
     private function onSuccess(): Response

@@ -15,68 +15,22 @@ services:
     # this creates a service per class whose id is the fully-qualified class name
     Application\:
         resource: '../src/Application/'
-        exclude:
-            - '../src/Application/DependencyInjection/'
-            - '../src/Application/Entity/'
-            - '../src/Application/Kernel.php'
-            - '../src/Application/Tests/'
+
     Domain\:
         resource: '../src/Domain/'
         exclude:
-            - '../src/Domain/DependencyInjection/'
-            - '../src/Domain/Entity/'
-            - '../src/Domain/Kernel.php'
-            - '../src/Domain/Tests/'
+            - '../src/Domain/Model/'
+
     Infrastructure\:
         resource: '../src/Infrastructure/'
-        exclude:
-            - '../src/Infrastructure/DependencyInjection/'
-            - '../src/Infrastructure/Entity/'
-            - '../src/Infrastructure/Kernel.php'
-            - '../src/Infrastructure/Tests/'
 
     # controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
-#    Infrastructure\Action\:
-#        resource: '../src/Infrastructure/Action/'
-#        tags: ['controller.service_arguments']
-
-    _instanceof:
-        Infrastructure\Action\Action:
-            public: true
-            tags: ['controller.service_arguments']
+    Infrastructure\Action\:
+        resource: '../src/Infrastructure/Action/'
+        tags: ['controller.service_arguments']
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
-
-    # ALIASES
-#    Domain\Model\Article\ArticleRepositoryInterface: '@article_repository_inmemory'
     Domain\Model\Article\ArticleRepositoryInterface: '@Infrastructure\Repository\Doctrine\ArticleRepository'
 
-    # FORMS
-#    Infrastructure\Form\Type\CreateArticleFormType: ~
-
-    # ACTIONS
-#    Infrastructure\Action\Article\CreateArticleAction: ~
-#    Infrastructure\Action\Article\ListArticleAction: ~
-
-    # COMMAND HANDLERS
-    Application\CommandHandler\CreateArticleCommandHandler:
-        public: true
-        tags:
-            - { name: command_handler, handles: Application\Command\CreateArticleCommand }
-
-    # QUERIES
-#    Application\Query\ListArticleQuery: ~
-
-    # REPOSITORIES
-#    article_repository_doctrine:
-#        class: Infrastructure\Repository\Doctrine\ArticleRepository
-#        arguments: ['Domain\Model\Article\Article']
-#        factory: ['@doctrine.orm.entity_manager', getRepository]
-
-#    article_repository_inmemory:
-#        class: Infrastructure\Repository\InMemory\ArticleRepository
-
-    # MessageBus
-    SimpleBus\Message\Bus\MessageBus: '@simple_bus.command_bus'

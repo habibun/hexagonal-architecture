@@ -2,7 +2,7 @@
 
 namespace Domain\Model\Article;
 
-use Symfony\Component\EventDispatcher\Event;
+use Symfony\Contracts\EventDispatcher\Event;
 
 class ArticleEvent extends Event
 {
