@@ -7,8 +7,9 @@ use Domain\Model\Article\Article;
 use Domain\Model\Article\ArticleEvent;
 use Domain\Model\Article\ArticleRepositoryInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 
-class CreateArticleCommandHandler
+class CreateArticleCommandHandler implements MessageHandlerInterface
 {
     public const CREATED = 'article.created';
 
@@ -21,7 +22,7 @@ class CreateArticleCommandHandler
         $this->eventDispatcher = $eventDispatcher;
     }
 
-    public function handle(CreateArticleCommand $command): void
+    public function __invoke(CreateArticleCommand $command): void
     {
         $article = new Article(
             uniqid(),

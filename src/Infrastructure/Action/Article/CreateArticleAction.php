@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Routing\RouterInterface;
 
 class CreateArticleAction implements Action
@@ -18,7 +19,7 @@ class CreateArticleAction implements Action
     private EngineInterface $templating;
     private RouterInterface $router;
     private FormFactoryInterface $formFactory;
-    private MessageBus $commandBus;
+    private MessageBusInterface $commandBus;
     private SessionInterface $session;
 
     public function __construct(
@@ -26,7 +27,7 @@ class CreateArticleAction implements Action
         RouterInterface $router,
         FormFactoryInterface $formFactory,
         SessionInterface $session,
-        MessageBus $commandBus
+        MessageBusInterface $commandBus
     ) {
         $this->templating = $templating;
         $this->router = $router;
@@ -42,7 +43,7 @@ class CreateArticleAction implements Action
 
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
-                $this->commandBus->handle($form->getData());
+                $this->commandBus->dispatch($form->getData());
 
                 return $this->onSuccess();
             }

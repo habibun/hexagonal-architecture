@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c1676f51e48c34d27ee225cb0a2b087",
+    "content-hash": "f69199de4ba1ad1b3ae54978d055907c",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -1628,148 +1628,6 @@
                 "source": "https://github.com/sensiolabs/SensioFrameworkExtraBundle/tree/v6.2.0"
             },
             "time": "2021-09-06T13:24:35+00:00"
-        },
-        {
-            "name": "simple-bus/message-bus",
-            "version": "v6.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SimpleBus/message-bus.git",
-                "reference": "160e2ce483d113aecf8e3fd2fe16a070de169fea"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/message-bus/zipball/160e2ce483d113aecf8e3fd2fe16a070de169fea",
-                "reference": "160e2ce483d113aecf8e3fd2fe16a070de169fea",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.4 || ^8.0",
-                "psr/log": "^1.0"
-            },
-            "require-dev": {
-                "ergebnis/composer-normalize": "^2.11",
-                "phpunit/phpunit": "^9.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "SimpleBus\\Message\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Cliff Odijk",
-                    "email": "cliff@jcid.nl"
-                },
-                {
-                    "name": "Ruud Kamphuis",
-                    "homepage": "https://github.com/ruudk"
-                },
-                {
-                    "name": "Matthias Noback",
-                    "email": "matthiasnoback@gmail.com",
-                    "homepage": "http://php-and-symfony.matthiasnoback.nl"
-                }
-            ],
-            "description": "Generic classes and interfaces for messages and message buses",
-            "homepage": "http://github.com/SimpleBus/MessageBus",
-            "keywords": [
-                "command bus",
-                "event bus",
-                "message",
-                "message bus"
-            ],
-            "support": {
-                "source": "https://github.com/SimpleBus/message-bus/tree/v6.2.0"
-            },
-            "time": "2021-02-23T16:49:04+00:00"
-        },
-        {
-            "name": "simple-bus/symfony-bridge",
-            "version": "v6.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SimpleBus/symfony-bridge.git",
-                "reference": "744e6e37e183c7773591426bdc30c101851d1498"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/symfony-bridge/zipball/744e6e37e183c7773591426bdc30c101851d1498",
-                "reference": "744e6e37e183c7773591426bdc30c101851d1498",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.4 || ^8.0",
-                "simple-bus/message-bus": "^6.0",
-                "symfony/config": "^4.4.17 || ^5.3",
-                "symfony/dependency-injection": "^4.4.17 || ^5.3",
-                "symfony/http-kernel": "^4.4 || ^5.3",
-                "symfony/yaml": "^4.4 || ^5.3"
-            },
-            "conflict": {
-                "zendframework/zend-code": "<3.3.1"
-            },
-            "require-dev": {
-                "doctrine/doctrine-bundle": "^2.2",
-                "doctrine/orm": "^2.8",
-                "ergebnis/composer-normalize": "^2.11",
-                "friendsofphp/proxy-manager-lts": "^1.0",
-                "phpunit/phpunit": "^9.3",
-                "simple-bus/doctrine-orm-bridge": "^6.0",
-                "symfony/framework-bundle": "^4.4 || ^5.3",
-                "symfony/monolog-bridge": "^4.4 || ^5.3",
-                "symfony/monolog-bundle": "^3.4",
-                "symfony/proxy-manager-bridge": "^4.4 || ^5.3"
-            },
-            "suggest": {
-                "doctrine/doctrine-bundle": "For integration with Doctrine ORM",
-                "doctrine/orm": "For integration with Doctrine ORM",
-                "simple-bus/doctrine-orm-bridge": "For integration with Doctrine ORM",
-                "symfony/monolog-bundle": "For logging messages",
-                "symfony/proxy-manager-bridge": "For integration with Symfony and Doctrine ORM"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "SimpleBus\\SymfonyBridge\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Cliff Odijk",
-                    "email": "cliff@jcid.nl"
-                },
-                {
-                    "name": "Ruud Kamphuis",
-                    "homepage": "https://github.com/ruudk"
-                },
-                {
-                    "name": "Matthias Noback",
-                    "email": "matthiasnoback@gmail.com",
-                    "homepage": "http://php-and-symfony.matthiasnoback.nl"
-                }
-            ],
-            "description": "Bridge for using command buses and event buses in Symfony projects",
-            "homepage": "http://github.com/SimpleBus/SymfonyBridge",
-            "keywords": [
-                "command bus",
-                "doctrine",
-                "event bus",
-                "symfony"
-            ],
-            "support": {
-                "source": "https://github.com/SimpleBus/symfony-bridge/tree/v6.2.0"
-            },
-            "time": "2021-07-08T13:47:01+00:00"
         },
         {
             "name": "symfony/asset",
@@ -3657,6 +3515,93 @@
                 }
             ],
             "time": "2021-09-14T15:48:39+00:00"
+        },
+        {
+            "name": "symfony/messenger",
+            "version": "v4.4.32",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/messenger.git",
+                "reference": "48d4db537f68fc522457113308055e380a792609"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/messenger/zipball/48d4db537f68fc522457113308055e380a792609",
+                "reference": "48d4db537f68fc522457113308055e380a792609",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.3",
+                "psr/log": "^1|^2|^3",
+                "symfony/polyfill-php80": "^1.16"
+            },
+            "conflict": {
+                "doctrine/persistence": "<1.3",
+                "symfony/event-dispatcher": "<4.3",
+                "symfony/framework-bundle": "<4.4",
+                "symfony/http-kernel": "<4.4"
+            },
+            "require-dev": {
+                "doctrine/dbal": "^2.6|^3.0",
+                "doctrine/persistence": "^1.3|^2",
+                "psr/cache": "^1.0|^2.0|^3.0",
+                "symfony/console": "^3.4|^4.0|^5.0",
+                "symfony/dependency-injection": "^3.4.19|^4.1.8|^5.0",
+                "symfony/event-dispatcher": "^4.3|^5.0",
+                "symfony/http-kernel": "^4.4",
+                "symfony/process": "^3.4|^4.0|^5.0",
+                "symfony/property-access": "^3.4|^4.0|^5.0",
+                "symfony/serializer": "^3.4|^4.0|^5.0",
+                "symfony/service-contracts": "^1.1|^2",
+                "symfony/stopwatch": "^3.4|^4.0|^5.0",
+                "symfony/validator": "^3.4|^4.0|^5.0"
+            },
+            "suggest": {
+                "enqueue/messenger-adapter": "For using the php-enqueue library as a transport."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Messenger\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Samuel Roze",
+                    "email": "samuel.roze@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Helps applications send and receive messages to/from other applications or via message queues",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/messenger/tree/v4.4.32"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-09-24T09:45:10+00:00"
         },
         {
             "name": "symfony/mime",

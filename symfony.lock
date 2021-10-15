@@ -93,12 +93,6 @@
             "config/packages/sensio_framework_extra.yaml"
         ]
     },
-    "simple-bus/message-bus": {
-        "version": "v6.2.0"
-    },
-    "simple-bus/symfony-bridge": {
-        "version": "v6.2.0"
-    },
     "symfony/asset": {
         "version": "v4.4.27"
     },
@@ -204,6 +198,18 @@
     },
     "symfony/intl": {
         "version": "v4.4.31"
+    },
+    "symfony/messenger": {
+        "version": "4.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.3",
+            "ref": "25e3c964d3aee480b3acc3114ffb7940c89edfed"
+        },
+        "files": [
+            "config/packages/messenger.yaml"
+        ]
     },
     "symfony/mime": {
         "version": "v4.4.31"
