@@ -10,10 +10,10 @@ Hexagonal Architecture with PHP using Symfony
 Read [Hexagonal architecture Docs](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software))
 
 Resources   
-- [`azimolabs`]()
+- [`azimolabs`][1]
   - [Ports and Adapters implementation in PHP, with a little help from Symfony](https://medium.com/azimolabs/ports-and-adapters-implementation-in-php-with-a-little-symfony-help-6d4fdbe830ba)
 
-- [`mdxpl`]()
+- [`mdxpl`][2]
   - [hexagonal-architecture-symfony](https://github.com/mdxpl/hexagonal-architecture-symfony)
   
 - [Symfony and Hexagonal Architecture](https://minompi.medium.com/symfony-and-hexagonal-architecture-b3c4704e94de)
